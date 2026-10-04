@@ -1,21 +1,25 @@
-# React + TypeScript + Vite + shadcn/ui
+# Supportdesk demo
 
-This is a template for a new Vite project with React, TypeScript, and shadcn/ui.
+A small, entirely client-side customer support app used as the Terminus demo project. Built with React, TypeScript, Vite, and locally bundled fonts and icons.
 
-## Adding components
+## Run locally
 
-To add components to your app, run the following command:
-
-```bash
-npx shadcn@latest add button
+```sh
+npm install
+npm run dev
 ```
 
-This will place the ui components in the `src/components` directory.
+Vite prints the local URL. `npm run build` builds the static site into `dist`, and `npm run preview` serves that build locally. Run `npm test`, `npm run typecheck`, and `npm run lint` for validation.
 
-## Using components
+## What’s included
 
-To use the components in your app, import them as follows:
+- Dashboard with ticket queue metrics, sample weekly activity, priority tickets, and recent tickets.
+- Twenty mock tickets, with search, status and priority filters, sorting, and pagination.
+- Ticket details with a conversation, local replies, status changes, priority changes, and assignment.
+- A new-ticket dialog and eight searchable customer records with links to their tickets.
+- Workspace settings, a sample support team, and light, dark, and system themes.
+- Responsive navigation and hash-based routes (for example, `#/tickets/TK-1042`).
 
-```tsx
-import { Button } from "@/components/ui/button"
-```
+Mock records live in `src/data/support.ts`. Weekly chart data is a separate, explicitly labeled historical sample. Ticket counts always reflect the current in-memory queue.
+
+There is no backend, authentication, database, or external service. Tickets, replies, and workspace edits only last for the current page session; refresh or **Settings → Reset demo data** restores the sample records. Appearance preferences are stored in browser `localStorage`. No customer messages are sent anywhere.
